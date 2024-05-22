@@ -46,6 +46,10 @@ sed -i 's/192.168.1.1/192.168.1.9/g' package/base-files/files/bin/config_generat
 # Add to compile options (Add related dependencies according to the requirements of the third-party software package Makefile)
 # sed -i "/DEFAULT_PACKAGES/ s/$/ pirania-app pirania ip6tables-mod-nat ipset shared-state-pirania uhttpd-mod-lua/" target/linux/armvirt/Makefile
 
+#####Add a feed source
+
+echo 'src-git amlogic https://github.com/ophub/luci-app-amlogic' >>feeds.conf.default
+
 # Apply patch
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
